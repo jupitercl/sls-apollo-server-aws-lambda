@@ -1,0 +1,13 @@
+version: "3"
+services:
+  serverless:
+    image: jupitercl/sls-apollo-server-aws-lambda
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID=access
+      - AWS_REGION_NAME=region
+      - AWS_SECRET_ACCESS_KEY=secret
+    volumes:
+      - ./:/apollo
